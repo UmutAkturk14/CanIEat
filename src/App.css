@@ -1,0 +1,257 @@
+.app {
+  min-height: 100vh;
+  padding: 48px 24px 72px;
+  display: flex;
+  justify-content: center;
+}
+
+.layout {
+  width: min(1100px, 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  font-size: 0.7rem;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+.hero h1 {
+  font-family: "Fraunces", "Times New Roman", serif;
+  font-size: clamp(2.4rem, 4vw, 3.4rem);
+  margin: 0 0 12px;
+  color: var(--ink);
+}
+
+.subhead {
+  max-width: 520px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.clock {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 20px 22px;
+  min-width: 220px;
+  box-shadow: var(--shadow);
+}
+
+.clock-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.clock-time {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-top: 8px;
+  color: var(--ink);
+}
+
+.clock-date {
+  margin-top: 8px;
+  color: var(--muted);
+}
+
+.status {
+  background: var(--panel-strong);
+  border-radius: 24px;
+  padding: 28px 32px;
+  border: 1px solid transparent;
+  display: grid;
+  gap: 18px;
+  box-shadow: var(--shadow);
+}
+
+.status-eat {
+  border-color: rgba(104, 190, 147, 0.5);
+  background: linear-gradient(135deg, rgba(104, 190, 147, 0.12), transparent);
+}
+
+.status-fast {
+  border-color: rgba(224, 141, 85, 0.5);
+  background: linear-gradient(135deg, rgba(224, 141, 85, 0.12), transparent);
+}
+
+.status-main h1 {
+  font-family: "Fraunces", "Times New Roman", serif;
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  margin: 10px 0 6px;
+}
+
+.status-main p {
+  color: var(--muted);
+}
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  background: rgba(20, 20, 20, 0.08);
+}
+
+.status-metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+}
+
+.metric {
+  background: var(--panel);
+  padding: 16px 18px;
+  border-radius: 16px;
+  border: 1px solid var(--line);
+}
+
+.metric span {
+  display: block;
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin-bottom: 8px;
+}
+
+.metric strong {
+  font-size: 1.2rem;
+  color: var(--ink);
+}
+
+.ghost-metric {
+  opacity: 0.7;
+}
+
+.panel {
+  background: var(--panel);
+  border-radius: 20px;
+  padding: 22px 24px;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.panel-header h2 {
+  font-size: 1.2rem;
+  margin: 0 0 6px;
+}
+
+.panel-header p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.preset-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.chip {
+  padding: 10px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+  font-weight: 500;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.chip:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent);
+}
+
+.chip-active {
+  background: var(--accent);
+  color: white;
+  border-color: transparent;
+}
+
+.custom-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.custom-label {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--muted);
+}
+
+.custom-row input {
+  padding: 8px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: white;
+  font-size: 1rem;
+  min-width: 110px;
+}
+
+.ghost {
+  padding: 8px 14px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: transparent;
+  cursor: pointer;
+}
+
+.helper {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.divider {
+  margin: 0 10px;
+  opacity: 0.5;
+}
+
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .clock {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .app {
+    padding: 32px 16px 64px;
+  }
+
+  .status {
+    padding: 22px;
+  }
+}
